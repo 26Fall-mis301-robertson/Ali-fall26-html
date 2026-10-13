@@ -69,3 +69,11 @@ nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px; }
   .game-table { font-size: .85rem; }
   .game-table th, .game-table td { padding: 10px 6px; overflow-wrap: anywhere; }
 }
+
+/* Closure notice banner at the top of the homepage. */
+.notice-banner { background: var(--green); color: var(--cream); padding: 14px 28px; text-align: center; }
+.notice-banner p { margin: 0 auto; max-width: 1160px; }
+.notice-banner strong { color: var(--cream); }
+@media (max-width: 760px) {
+  .notice-banner { padding: 12px 18px; }
+}
