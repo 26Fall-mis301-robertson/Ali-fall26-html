@@ -1,0 +1,71 @@
+/* Shared colors and basic page settings. */
+:root {
+  --cream: #faf5e9;
+  --brown: #432c1d;
+  --green: #435640;
+  --paper: #fffdf7;
+  --line: #dcd3c0;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--cream); color: var(--brown); font-family: Arial, sans-serif; font-size: 17px; line-height: 1.65; }
+a { color: var(--green); text-underline-offset: 4px; }
+a:focus-visible { outline: 3px solid var(--green); outline-offset: 5px; }
+h1, h2, h3 { font-family: Georgia, serif; line-height: 1.15; }
+h1 { font-size: clamp(2.3rem, 4vw, 3.6rem); margin: 12px 0 24px; }
+h2 { font-size: clamp(1.9rem, 3vw, 2.5rem); margin: 8px 0 26px; }
+h3 { font-size: 1.4rem; margin: 0 0 20px; }
+p { margin: 0 0 18px; }
+.site-header { border-bottom: 1px solid var(--line); }
+.header-inner, main { max-width: 1160px; margin: auto; padding-left: 28px; padding-right: 28px; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; padding-bottom: 12px; }
+.logo { display: block; width: 170px; height: auto; }
+nav a { display: inline-block; padding: 10px 16px; font-weight: bold; }
+nav a[aria-current="page"] { border-bottom: 2px solid var(--green); }
+section { padding: 48px 0; }
+section + section { border-top: 1px solid var(--line); }
+.welcome { display: grid; grid-template-columns: 1fr 1fr; gap: 38px; align-items: center; }
+.eyebrow { color: var(--green); text-transform: uppercase; font-size: .78rem; font-weight: bold; letter-spacing: .12em; margin-bottom: 10px; }
+.cafe-image { display: block; width: 100%; height: auto; border-radius: 14px; }
+.button { display: inline-block; background: var(--green); color: white; padding: 11px 22px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 8px; }
+.button:hover { background: var(--brown); }
+.two-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 26px; }
+table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+th, td { padding: 10px 0; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+th { font-weight: normal; padding-right: 16px; }
+thead th { font-weight: bold; color: var(--green); }
+tr:last-child th, tr:last-child td { border-bottom: 0; }
+.menu td, .menu thead th:last-child { text-align: right; white-space: nowrap; }
+address { font-style: normal; overflow-wrap: anywhere; }
+.note { font-size: .9rem; color: var(--green); margin: 24px 0 0; }
+.events { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.event-time { color: var(--green); font-weight: bold; font-size: .95rem; }
+.card p:last-child { margin-bottom: 0; }
+footer { background: var(--green); color: var(--cream); padding: 28px; text-align: center; }
+footer p { margin: 0; }
+/* Accessible labels remain available to screen readers. */
+.visually-hidden, .skip-link:not(:focus) { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.skip-link:focus { display: block; padding: 12px; }
+/* Stack columns on smaller screens. */
+@media (max-width: 760px) {
+  .welcome, .two-columns, .events { grid-template-columns: 1fr; }
+  .header-inner, main { padding-left: 18px; padding-right: 18px; }
+  .logo { width: 140px; }
+  section { padding: 32px 0; }
+  .card { padding: 20px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Game Shelf table and navigation on narrow screens. */
+nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px; }
+.game-table caption { text-align: left; margin-bottom: 18px; color: var(--green); }
+.game-table td { padding-right: 12px; }
+.shelf-return { margin-top: 24px; }
+@media (max-width: 480px) {
+  .header-inner { flex-wrap: wrap; justify-content: center; gap: 8px; }
+  nav { justify-content: center; }
+  .game-card { padding: 12px; }
+  .game-table { font-size: .85rem; }
+  .game-table th, .game-table td { padding: 10px 6px; overflow-wrap: anywhere; }
+}
